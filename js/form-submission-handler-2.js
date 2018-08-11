@@ -15,7 +15,7 @@
 
   // get all data in form and return object
   function getFormData() {
-    var form = document.getElementById("gform");
+    var form = document.getElementById("registrationForm");
     var elements = form.elements;
 
     var fields = Object.keys(elements).filter(function(k) {
@@ -101,9 +101,9 @@
     }
   }
   function loaded() {
-    console.log("Contact form submission handler loaded successfully.");
+    console.log("Registration form submission handler loaded successfully.");
     // bind to the submit event of our form
-    var form = document.getElementById("gform");
+    var form = document.getElementById("registrationForm");
     form.addEventListener("submit", handleFormSubmit, false);
   };
   document.addEventListener("DOMContentLoaded", loaded, false);
