@@ -1300,3 +1300,51 @@ textarea.input {
   color: black;
   font-size: 20px;
 }
+
+.section-title-divider{
+      width: 50px;
+    height: 3px;
+    background: #df4638;
+    margin: 0 auto 20px;
+}
+
+#faqs .faq-title{
+    text-transform: uppercase
+}
+
+#faqs .faq-item {
+    margin-bottom: 10px
+}
+#faqs .faq-icon {
+    float: left;
+    background: #df4638;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .5s;
+    border: 1px solid #df4638;
+    cursor: pointer;
+}
+#faqs .faq-icon i {
+    color: #fff;
+    font-size: 24px
+}
+#faqs .faq-item:hover .faq-icon {
+    background: #fff
+}
+#faqs .faq-item:hover .faq-icon i {
+    color: #df4638
+}
+#faqs .faq-title {
+    margin-left: 60px;
+    font-weight: 700;
+    margin-bottom: 15px
+}
+#faqs .faq-title a {
+    color: #111
+}
+#faqs .faq-description {
+    margin-left: 60px;
+    line-height: 24px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
