@@ -111,6 +111,6 @@
 
 	});
 
-	$('#myModal').click(modal('show'));
+
 
 })(jQuery);

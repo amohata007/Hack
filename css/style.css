@@ -1287,6 +1287,15 @@ textarea.input {
   color: #dd0a37;
 }
 
+.close {
+      position: fixed;
+    top: 20px;
+    right: 3%;
+    font-size: 30px;
+    opacity: 1;
+}
+
+
 .register-input {
   /*margin-right: 150px;*/
   margin-bottom :10px;
@@ -1303,6 +1312,14 @@ textarea.input {
 #registration_message{
   color: black;
   font-size: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
 
 .section-title-divider{
