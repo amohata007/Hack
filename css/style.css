@@ -1288,12 +1288,16 @@ textarea.input {
 }
 
 .register-input {
-  margin-right: 150px;
+  /*margin-right: 150px;*/
   margin-bottom :10px;
 }
 
-#register-label {
+/*#register-label {
   margin-left: 20px;
+}*/
+
+.row-form {
+  margin: unset;
 }
 
 #registration_message{
