@@ -1416,3 +1416,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 1.2em;
     margin-bottom: 15px;
 }
+
+
+
+
+.control-label {
+  margin-bottom: 10px;
+}

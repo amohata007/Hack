@@ -19,21 +19,21 @@
     var elements = form.elements;
 
     var fields = Object.keys(elements).filter(function(k) {
-          return (elements[k].name !== "honeypot");
+      return (elements[k].name !== "honeypot");
     }).map(function(k) {
       if(elements[k].name !== undefined) {
         return elements[k].name;
       // special case for Edge's html collection
-      }else if(elements[k].length > 0){
-        return elements[k].item(0).name;
-      }
-    }).filter(function(item, pos, self) {
-      return self.indexOf(item) == pos && item;
-    });
+    }else if(elements[k].length > 0){
+      return elements[k].item(0).name;
+    }
+  }).filter(function(item, pos, self) {
+    return self.indexOf(item) == pos && item;
+  });
 
-    var formData = {};
-    fields.forEach(function(name){
-      var element = elements[name];
+  var formData = {};
+  fields.forEach(function(name){
+    var element = elements[name];
 
       // singular form elements just have one value
       formData[name] = element.value;
@@ -84,18 +84,18 @@
       // xhr.withCredentials = true;
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function() {
-          console.log( xhr.status, xhr.statusText )
-          console.log(xhr.responseText);
+        console.log( xhr.status, xhr.statusText )
+        console.log(xhr.responseText);
           document.getElementById("gform").style.display = "none"; // hide form
           var thankYouMessage = document.querySelector("#thankyou_message");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
           }
           return;
-      };
+        };
       // url encode form data for sending as post data
       var encoded = Object.keys(data).map(function(k) {
-          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k])
+        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k])
       }).join('&')
       xhr.send(encoded);
     }
@@ -115,3 +115,60 @@
     }
   }
 })();
+
+
+function addFields(){
+  var number = document.getElementById("member").value;
+  var container = document.getElementById("member-details");
+  while (container.hasChildNodes()) {
+    container.removeChild(container.lastChild);
+  }
+
+  for (i=0;i<number-1;i++){
+    var member = document.createElement("h4");
+    member.class = "col-md-12 col-sm-12 col-xs-12";
+    member.style = "text-decoration: underline;";
+    member.innerHTML = "Member "+(i+2)+" Details";
+    container.appendChild(member);
+    var label_name = document.createElement("label");
+    var input_name = document.createElement("input");
+    var label_email = document.createElement("label");
+    var input_email = document.createElement("input");
+    label_name.for = "member-name"+(i+2);
+    label_name.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
+    label_name.innerHTML = "Member Name";
+    input_name.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
+    input_name.type = "text";
+    input_name.placeholder = "Member "+(i+2)+" Name";
+    input_name.required = "";
+    input_name.name = "member-name"+(i+2);
+    input_name.id = "member-name"+(i+2);
+    container.appendChild(label_name);
+    container.appendChild(input_name);
+    label_email.for = "member-email"+(i+2);
+    label_email.innerHTML = "Member Email";
+    label_email.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
+    input_email.type = "email";
+    input_email.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
+    input_email.placeholder = "Member "+(i+2)+" Email";
+    input_email.required = "";
+    input_email.name = "member-email"+(i+2);
+    input_email.id = "member-email"+(i+2);
+    container.appendChild(label_email);
+    container.appendChild(input_email);
+    var label_contact = document.createElement("label");
+    var input_contact = document.createElement("input");
+    label_contact.for = "member-contact"+(i+2);
+    label_contact.innerHTML = "Member Contact No.";
+    label_contact.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
+    input_contact.type = "number";
+    input_contact.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
+    input_contact.max = "9999999999x";
+    input_contact.placeholder = "Member "+(i+2)+" Conatct No.";
+    input_contact.required = "";
+    input_contact.name = "member-contact"+(i+2);
+    input_contact.id = "member-contact"+(i+2);
+    container.appendChild(label_contact);
+    container.appendChild(input_contact);
+  }
+}
