@@ -124,51 +124,60 @@ function addFields(){
     container.removeChild(container.lastChild);
   }
 
-  for (i=0;i<number-1;i++){
-    var member = document.createElement("h4");
-    member.class = "col-md-12 col-sm-12 col-xs-12";
-    member.style = "text-decoration: underline;";
-    member.innerHTML = "Member "+(i+2)+" Details";
-    container.appendChild(member);
-    var label_name = document.createElement("label");
-    var input_name = document.createElement("input");
-    var label_email = document.createElement("label");
-    var input_email = document.createElement("input");
-    label_name.for = "member-name"+(i+2);
-    label_name.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
-    label_name.innerHTML = "Member Name";
-    input_name.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
-    input_name.type = "text";
-    input_name.placeholder = "Member "+(i+2)+" Name";
-    input_name.required = "";
-    input_name.name = "member-name"+(i+2);
-    input_name.id = "member-name"+(i+2);
-    container.appendChild(label_name);
-    container.appendChild(input_name);
-    label_email.for = "member-email"+(i+2);
-    label_email.innerHTML = "Member Email";
-    label_email.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
-    input_email.type = "email";
-    input_email.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
-    input_email.placeholder = "Member "+(i+2)+" Email";
-    input_email.required = "";
-    input_email.name = "member-email"+(i+2);
-    input_email.id = "member-email"+(i+2);
-    container.appendChild(label_email);
-    container.appendChild(input_email);
-    var label_contact = document.createElement("label");
-    var input_contact = document.createElement("input");
-    label_contact.for = "member-contact"+(i+2);
-    label_contact.innerHTML = "Member Contact No.";
-    label_contact.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
-    input_contact.type = "number";
-    input_contact.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
-    input_contact.max = "9999999999x";
-    input_contact.placeholder = "Member "+(i+2)+" Conatct No.";
-    input_contact.required = "";
-    input_contact.name = "member-contact"+(i+2);
-    input_contact.id = "member-contact"+(i+2);
-    container.appendChild(label_contact);
-    container.appendChild(input_contact);
+  if (number < 2 || number > 6){
+    var error = document.getElementById("limit");
+    error.innerHTML = "Team size should be 2 to 6 members";
+    error.style.display="block";
+  }
+  else{
+    var error = document.getElementById("limit");
+    error.style.display = "none";
+    for (i=0;i<number-1;i++){
+      var member = document.createElement("h4");
+      member.class = "col-md-12 col-sm-12 col-xs-12";
+      member.style = "text-decoration: underline;";
+      member.innerHTML = "Member "+(i+2)+" Details";
+      container.appendChild(member);
+      var label_name = document.createElement("label");
+      var input_name = document.createElement("input");
+      var label_email = document.createElement("label");
+      var input_email = document.createElement("input");
+      label_name.for = "member-name"+(i+2);
+      label_name.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
+      label_name.innerHTML = "Member Name";
+      input_name.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
+      input_name.type = "text";
+      input_name.placeholder = "Member "+(i+2)+" Name";
+      input_name.required = "";
+      input_name.name = "member-name"+(i+2);
+      input_name.id = "member-name"+(i+2);
+      container.appendChild(label_name);
+      container.appendChild(input_name);
+      label_email.for = "member-email"+(i+2);
+      label_email.innerHTML = "Member Email";
+      label_email.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
+      input_email.type = "email";
+      input_email.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
+      input_email.placeholder = "Member "+(i+2)+" Email";
+      input_email.required = "";
+      input_email.name = "member-email"+(i+2);
+      input_email.id = "member-email"+(i+2);
+      container.appendChild(label_email);
+      container.appendChild(input_email);
+      var label_contact = document.createElement("label");
+      var input_contact = document.createElement("input");
+      label_contact.for = "member-contact"+(i+2);
+      label_contact.innerHTML = "Member Contact No.";
+      label_contact.setAttribute("class","col-md-6 col-sm-6 col-xs-12");
+      input_contact.type = "number";
+      input_contact.setAttribute("class","col-md-6 col-sm-6 col-xs-12 control-label");
+      input_contact.max = "9999999999x";
+      input_contact.placeholder = "Member "+(i+2)+" Conatct No.";
+      input_contact.required = "";
+      input_contact.name = "member-contact"+(i+2);
+      input_contact.id = "member-contact"+(i+2);
+      container.appendChild(label_contact);
+      container.appendChild(input_contact);
+    }
   }
 }
