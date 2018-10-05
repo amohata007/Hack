@@ -87,10 +87,8 @@
           console.log( xhr.status, xhr.statusText )
           console.log(xhr.responseText);
           document.getElementById("registrationForm").style.display = "none"; // hide form
-          var thankYouMessage = document.querySelector("#registration_message");
-          if (thankYouMessage) {
+          var thankYouMessage = document.getElementById("registration_message");
             thankYouMessage.style.display = "block";
-          }
           return;
       };
       // url encode form data for sending as post data
