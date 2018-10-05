@@ -124,9 +124,9 @@ function addFields(){
     container.removeChild(container.lastChild);
   }
 
-  if (number < 2 || number > 6){
+  if (number < 3 || number > 5){
     var error = document.getElementById("limit");
-    error.innerHTML = "Team size should be 2 to 6 members";
+    error.innerHTML = "Team size should be 3 to 5 members";
     error.style.display="block";
   }
   else{

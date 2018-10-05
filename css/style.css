@@ -37,10 +37,14 @@ RESPONSIVE
 	typography
   \*----------------------------*/
 
-  body {
+  html,body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: #444;
+    overflow-x:hidden;
+    width:100%;
+    margin: 0;
+    padding: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -145,7 +149,9 @@ RESPONSIVE
   .section-title {
     text-align: center;
     margin-bottom: 60px;
+   
   }
+  
 
   .section-title .title {
     position: relative;
@@ -801,11 +807,14 @@ RESPONSIVE
 
   #contact.section {
     padding-bottom: 0px;
+   
+    
   }
 
   .contact {
     text-align: center;
     margin-bottom: 30px;
+    /* background-image: url("https://wallpapersite.com/images/wallpapers/blur-background-2880x1800-spectrum-electromagnetic-4k-901.jpg"); */
   }
 
   .contact h3 {
@@ -1250,7 +1259,7 @@ RESPONSIVE
     transform: rotate(270deg);
     position: fixed;
     bottom: 50px;
-    right: 0;
+    right: 30px;
     background-color: #DDD;
     color: #DD0A37;
     text-align: center;
